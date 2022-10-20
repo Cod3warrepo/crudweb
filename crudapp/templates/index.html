@@ -1,0 +1,19 @@
+{% extends './base.html' %}
+
+{% block bodyblockarea %}
+<br><br>
+<hr><hr>
+    this is bodyarea
+    <hr><hr>
+    <br><br>
+    {{ request.user.email }}
+
+
+    {% if user.is_authenticated %}
+          this is authenticate text
+        {% else %}
+          this is not authen text
+        {% endif %} 
+
+{% endblock bodyblockarea %}
+

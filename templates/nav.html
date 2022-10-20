@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">Crud App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="std_db">Students Database</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      
+      <ul class="navbar-nav"> 
+      
+        {% if user.is_authenticated %}
+          <li class="nav-item active" style="margin:0 5px; padding:0px; height:40px" ><a class="btn btn-outline-success text-light" href="#" style="border:1px solid white;">{{ request.user.username|upper }}</a></li>
+          <li class="nav-item active"><a class="nav-link" href="logout_user">&nbsp;&nbsp; Sign out &nbsp;&nbsp;</a></li>
+        {% else %}
+          <li class="nav-item active"><a class="nav-link" href="login_user">&nbsp;&nbsp; Sign In &nbsp;&nbsp;</a></li>
+          <li class="nav-item active"><a class="nav-link" href="reg_user">&nbsp;&nbsp; Sign Up &nbsp;&nbsp;</a></li>
+          <li class="nav-item active"><span class="nav-link">&nbsp;&nbsp; Guest &nbsp;&nbsp;</span></li>
+        {% endif %} 
+        </ul> 
+       
+    </div>
+  </nav>
