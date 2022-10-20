@@ -9,9 +9,11 @@ class StudentDB(models.Model):
     def __str__(self):
         return self.std_name
     
-# class StoreDB(models.Model):
-#     storeID = 
-#     storeName = 
-#     storeSale = 
+class StoreDB(models.Model):
+    storeID = models.IntegerField(unique=True)
+    storeName = models.CharField(max_length=60)
+    storeSale = models.IntegerField(max_length=10)
     
-# migration not done
+    def __str__(self):
+        return self.storeName
+

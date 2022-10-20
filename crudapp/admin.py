@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import StudentDB, StoreDB
 
-# Register your models here.
+admin.site.register(StudentDB)
+admin.site.register(StoreDB)
