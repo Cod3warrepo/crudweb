@@ -1,0 +1,23 @@
+{% extends './base.html' %}
+
+{% block bodyblockarea %}
+    
+    <div class="container">
+    <h2 class="text-center" style="margin:25px 0;">Add Student to Record</h2>
+        <center>
+    <form action="/std_db_edit_func/{{ studentdb.id }}" method="post">
+        {% csrf_token %}
+        <input type="text" name="std_roll_no" value="{{ studentdb.std_roll_no }}">
+        <input type="text" name="std_name" value="{{ studentdb.std_name }}">
+        <input type="text" name="std_class" value="{{ studentdb.std_class }}">
+        <button class="btn btn-success">Add Record</button>
+
+        
+    
+    
+    
+    </form>
+        </center>
+    </div>
+
+{% endblock bodyblockarea %}

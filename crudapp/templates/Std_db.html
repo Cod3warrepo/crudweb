@@ -1,7 +1,37 @@
 {% extends './base.html' %}
 
 {% block bodyblockarea %}
-this is student database area
+    
+    <div class="container">
+    <h2 class="text-center" style="margin:25px 0;">Students Record</h2>
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Roll #</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Class</th>
+            <th scope="col">For Edit</th>                
+            <th scope="col">For Delete</th>                
+        </tr>
+        </thead>
+        <tbody>    
+
+    {% for stddb in studentdb %}
+               
+              <tr>
+                <th scope="row">{{ stddb.std_roll_no }}</th>
+                <td>{{ stddb.std_name }}</td>
+                <td>{{ stddb.std_class }}</td>
+                <td><a href="std_db_edit/{{ stddb.id }}" class="btn btn-secondary">Edit</a></td>
+                <td><a href="std_db_delete/{{ stddb.id }}" class="btn btn-secondary">Delete</a></td>
+              </tr>              
+
+    {% endfor %}
+
+        </tbody>
+        </table>
+        <div class="container"><a href="std_db_add" class="btn btn-success">Add Record</a></div>
+    </div>
 
 {% endblock bodyblockarea %}
 
